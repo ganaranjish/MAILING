@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/#bootstap.min.css">
+    <script src="/public/js/#bootstrap.min.js"></script>
+    <style>
+        .myMargin{
+    margin: 25px;
+}
+*{
+    padding:0;
+    margin: 0;
+
+}
+.text-white a{
+color: #fff !important;
+}
+    </style>
+</head>
+<body>
+    <div class="row text-white">
+        <div class="col-md-4"></div>
+     <div class="col-md-3 myMargin">
+      <form id="contact-form" action="/mailer" method="POST">
+        <div class="form-group mb-2">
+            <input type="text" id="semail" name="email" autocomplete="on" class="form-control" placeholder="Email id"/>
+        </div>
+         <div class="text-left"> 
+            <button type="submit" class="btn btn-big btn-primary">Send Email</button>
+         </div> 
+    </form>
+    </div>
+</div>
+<script>
+    function svalidate()
+{
+    var smail = document.getElementById("semail");
+    var regexp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var status_check=0;
+    if(regexp.test(smail.value)!="1")
+      {
+
+        error2.innerHTML="Email Is Invalid";
+        error2.style.color="red";
+        smail.style.borderColor="red";
+        status_check = 1
+        
+      }
+      if(status_check == 1)
+      {
+        return false;
+      }
+      if (status_check == 0)
+      {
+        return true;
+      }
+};
+</script>
+</body>
+</html>
